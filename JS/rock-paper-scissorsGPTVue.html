@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors GPT Vue</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Rock Paper Scissors</h1>
+    <div class="round-button">
+      <!-- Rock button -->
+      <button @click="playGame('Rock')">Rock</button>
+
+      <!-- Paper button -->
+      <button @click="playGame('Paper')">Paper</button>
+
+      <!-- Scissors button -->
+      <button @click="playGame('Scissors')">Scissors</button>
+    </div>
+
+    <p>
+      Computer's Move: {{ computerMove }}
+    </p>
+    <p>
+      Result: {{ result }}
+    </p>
+
+    <!-- Win, lose, and tie counters -->
+    <p>
+      Wins: {{ wins }}
+    </p>
+    <p>
+      Losses: {{ losses }}
+    </p>
+    <p>
+      Ties: {{ ties }}
+    </p>
+
+    <!-- Link to the final version of the project -->
+    <p id="link">
+      <a href="">Click here</a> to see the final version of the project.
+    </p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        computerMove: '',
+        result: '',
+        wins: 0,
+        losses: 0,
+        ties: 0
+      },
+      methods: {
+        playGame(playerMove) {
+          // Generate a random move for the computer
+          const moves = ['Rock', 'Paper', 'Scissors'];
+          const randomIndex = Math.floor(Math.random() * 3);
+          this.computerMove = moves[randomIndex];
+
+          // Determine the result
+          if (playerMove === this.computerMove) {
+            this.result = 'Tie!';
+            this.ties++;
+          } else if (
+            (playerMove === 'Rock' && this.computerMove === 'Scissors') ||
+            (playerMove === 'Paper' && this.computerMove === 'Rock') ||
+            (playerMove === 'Scissors' && this.computerMove === 'Paper')
+          ) {
+            this.result = 'You win!';
+            this.wins++;
+          } else {
+            this.result = 'You lose!';
+            this.losses++;
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

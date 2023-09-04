@@ -1,0 +1,62 @@
+    /* Your CSS styles here */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+
+    }
+
+    html {
+      /*color-scheme: dark light;*/
+    }
+
+    body {
+      font-family: monospace;
+      display: block;
+      min-height: 100vh;
+padding-left: 35%;
+    }
+
+    img,
+    picture svg,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+    #link {
+      
+      margin-left: 0px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 20px;
+      display:;
+      cursor: pointer;
+      border-radius: 20%;
+    }
+
+    img {
+      padding: 0px;
+      display: flex;
+      width: 100px;
+      height: 100px;
+    }
+    #rock{
+      padding: 20px;
+    }
+h1{
+  padding-left: 7%;
+margin: 20px;
+}
+    /* Hover effect for the button (optional) */
+    button:hover {
+      background-color: #db891d;
+      /* Change to your desired hover color */
+    }
+    div{}
